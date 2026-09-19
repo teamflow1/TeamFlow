@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Team Flow — команда веб-разработчиков. Создаём сайты, веб-приложения и digital-продукты.">
+  <title>Team Flow — веб-разработка</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FFD60A'/><text x='50' y='72' font-family='Arial,sans-serif' font-size='72' font-weight='900' fill='%23000' text-anchor='middle'>F</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="theme-switcher" id="themeSwitcher" aria-label="Переключение темы">
+    <button class="theme-btn" data-theme="light" aria-label="Светлая тема" title="Светлая">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+    </button>
+    <button class="theme-btn" data-theme="auto" aria-label="Автоматическая тема" title="Автоматически">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 3v18"/>
+        <path d="M12 3a9 9 0 0 1 0 18" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+    <button class="theme-btn" data-theme="dark" aria-label="Тёмная тема" title="Тёмная">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main>
+
+    <section class="hero" aria-label="Главный экран">
+      <div class="blob blob-red" aria-hidden="true"></div>
+      <div class="blob blob-yellow" aria-hidden="true"></div>
+      <div class="blob blob-blue" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1 class="hero-title">
+            <span>TEAM</span>
+            <span>FLOW</span>
+          </h1>
+          <p class="hero-subtitle">Мы превращаем идеи в digital-поток</p>
+          <button class="btn-primary" id="scrollBtn" type="button">
+            Обсудить проект
+            <span class="arrow" aria-hidden="true">↓</span>
+          </button>
+        </div>
+
+        <div class="hero-right">
+          <canvas id="pixelCanvas" aria-hidden="true"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards-section" id="cardsSection" aria-label="Навигация по сайту">
+      <div class="cards-inner">
+
+        <a href="#projects" class="card">
+          <div class="card-image">
+            <canvas class="card-canvas" data-color="#FF3B3B" aria-hidden="true"></canvas>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Наши проекты</h2>
+            <p class="card-desc">Кейсы, которые мы сделали с любовью к деталям</p>
+          </div>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="#contact" class="card">
+          <div class="card-image">
+            <canvas class="card-canvas" data-color="#FFD60A" aria-hidden="true"></canvas>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Связаться</h2>
+            <p class="card-desc">Расскажите об идее — обсудим и предложим решение</p>
+          </div>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="https://github.com/teamflow1" target="_blank" rel="noopener noreferrer" class="card">
+          <div class="card-image">
+            <canvas class="card-canvas" data-color="#2E8BFF" aria-hidden="true"></canvas>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">GitHub</h2>
+            <p class="card-desc">Наш код, опенсорс и пет-проекты — всё открыто</p>
+          </div>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="projects-section" id="projects" aria-label="Наши проекты">
+      <div class="projects-inner">
+
+        <header class="projects-header">
+          <h2 class="projects-title">
+            <span>НАШИ</span>
+            <span>ПРОЕКТЫ</span>
+          </h2>
+          <p class="projects-subtitle">Три работы, которыми мы особенно гордимся</p>
+        </header>
+
+        <article class="project">
+          <div class="project-preview">
+            <img src="images/doctor.png" alt="Лендинг врача" loading="lazy">
+          </div>
+          <div class="project-info">
+            <span class="project-number">01</span>
+            <h3 class="project-name">Лендинг врача</h3>
+            <p class="project-desc">
+              Личный сайт врача: биография, направления работы, отзывы. Свёрстан за 24 часа, развёрнут на хостинге, адаптирован под все устройства.
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a href="https://dr-vanyan.ru/" target="_blank" rel="noopener noreferrer" class="project-link">
+              Смотреть проект <span class="project-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project project-reverse">
+          <div class="project-preview">
+            <img src="images/restourant.png" alt="Сайт ресторана европейской кухни" loading="lazy">
+          </div>
+          <div class="project-info">
+            <span class="project-number">02</span>
+            <h3 class="project-name">Сайт ресторана</h3>
+            <p class="project-desc">
+              Сайт ресторана европейской кухни: меню с фильтрацией блюд, смена светлой и тёмной темы с сохранением выбора, карусель блюд. Быстро, адаптивно, со вкусом.
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a href="https://nvrkxmvshv.github.io/Restaurant/" target="_blank" rel="noopener noreferrer" class="project-link">
+              Смотреть проект <span class="project-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-preview">
+            <img src="images/society.png" alt="Соцсеть Mesto" loading="lazy">
+          </div>
+          <div class="project-info">
+            <span class="project-number">03</span>
+            <h3 class="project-name">Mesto</h3>
+            <p class="project-desc">
+              Соцсеть с профилями и общей лентой: смена ника и аватара, публикация постов с картинкой и датой. Посты видны всем пользователям с любых устройств.
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a href="https://nvrkxmvshv.github.io/mesto_production/" target="_blank" rel="noopener noreferrer" class="project-link">
+              Смотреть проект <span class="project-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="github-section" id="github" aria-label="GitHub">
+      <a href="https://github.com/teamflow1" target="_blank" rel="noopener noreferrer" class="github-card">
+        <div class="github-bg">
+          <canvas id="githubCanvas" aria-hidden="true"></canvas>
+        </div>
+
+        <div class="github-content">
+          <div class="github-top">
+            <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
+            </svg>
+            <span class="github-badge">Open Source</span>
+          </div>
+
+          <h2 class="github-title">
+            Больше проектов<br>
+            <span class="github-accent">на GitHub</span>
+          </h2>
+
+          <p class="github-desc">
+            Пет-проекты, эксперименты, опенсорсные библиотеки — всё, что не попало в портфолио, живёт здесь.
+          </p>
+
+          <div class="github-cta">
+            <span>github.com/teamflow1</span>
+            <span class="github-arrow" aria-hidden="true">→</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <section class="contact-section" id="contact" aria-label="Связаться с нами">
+      <div class="contact-inner">
+
+        <header class="contact-header">
+          <h2 class="contact-title">СВЯЗАТЬСЯ</h2>
+          <p class="contact-subtitle">
+            Расскажите об идее — обсудим, предложим решение и сроки. Отвечаем в течение дня.
+          </p>
+        </header>
+
+        <div class="contact-grid">
+
+          <a href="https://t.me/m0nicv" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-label">Telegram</span>
+            <span class="contact-value">@m0nicv</span>
+            <span class="contact-hint">написать в чат</span>
+          </a>
+
+          <a href="mailto:teamflow121@gmail.com" class="contact-item">
+            <span class="contact-label">Почта</span>
+            <span class="contact-value">teamflow121@gmail.com</span>
+            <span class="contact-hint">написать письмо</span>
+          </a>
+
+          <a href="https://max.ru/teamflow" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-label">MAX</span>
+            <span class="contact-value">@teamflow</span>
+            <span class="contact-hint">написать в MAX</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">TEAM FLOW</span>
+      <span class="footer-copy">© 2026 Team Flow. Все права защищены.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
